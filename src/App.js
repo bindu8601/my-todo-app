@@ -3,15 +3,19 @@ import "./style.css";
 import { Header } from "./components/Header";
 import { Message } from "./components/Message";
 import { MainContent } from "./components/MainContent";
+import { Provider } from "react-redux";
+import { store } from "./store/store";
 
-function App() {
+const App = () => {
   return (
-    <div>
-      <Header />
-      <Message />
-      <MainContent />
-    </div>
+    <Provider store={store}>
+      <div>
+        <Header />
+        <Message />
+        <MainContent />
+      </div>
+    </Provider>
   );
-}
+};
 
 export default App;

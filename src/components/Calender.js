@@ -10,7 +10,7 @@ export const Calender = () => {
   const wrapperStyle = {
     width: 400,
     border: "1px solid white",
-    marginLeft: "30px",
+    marginLeft: "7.5rem",
     marginTop: "5px",
     borderRadius: "8px",
     boxShadow: "0 25px 50px -12px rgb(0 0 0 / 0.25)",
@@ -100,12 +100,12 @@ export const Calender = () => {
       </div>
       <div className="flex flex-col">
         <Input
-          className="ml-[38px] mt-[10px] border-inherit shadow-lg"
+          className="ml-[8rem] mt-[10px] border-inherit shadow-lg"
           placeholder="Add Task"
         />
         <div>
           <TextArea
-            className="ml-[38px] mt-[10px] border-inherit shadow-lg"
+            className="ml-[8rem] mt-[10px] border-inherit shadow-lg"
             rows={4}
             placeholder="Additional Info"
           />
