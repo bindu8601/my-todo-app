@@ -2,8 +2,12 @@ import { CheckCircleOutlined } from "@ant-design/icons";
 import { Calendar, Col, Input, Row, Select } from "antd";
 import TextArea from "antd/es/input/TextArea";
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setTaskDesp, setTaskName } from "../reducer/todoSlice";
 
 export const Calender = () => {
+  const { taskName, taskDesp } = useSelector(({ todoSlice }) => todoSlice);
+  const dispatch = useDispatch();
   const onPanelChange = (value, mode) => {
     console.log(value.format("YYYY-MM-DD"), mode);
   };
@@ -100,14 +104,18 @@ export const Calender = () => {
       </div>
       <div className="flex flex-col">
         <Input
-          className="ml-[8rem] mt-[10px] border-inherit shadow-lg"
+          className="ml-[8rem] mt-[10px] border-inherit shadow-lg w-auto"
           placeholder="Add Task"
+          value={taskName}
+          onChange={(e) => dispatch(setTaskName(e.target.value))}
         />
         <div>
           <TextArea
-            className="ml-[8rem] mt-[10px] border-inherit shadow-lg"
+            className="ml-[8rem] mt-[10px] border-inherit shadow-lg w-auto"
             rows={4}
             placeholder="Additional Info"
+            value={taskDesp}
+            onChange={(e) => dispatch(setTaskDesp(e.target.value))}
           />
           <button className="border w-[40px] ml-3 h-[36px] bg-[#f08080] pt-[2px] rounded-xl">
             <CheckCircleOutlined />
